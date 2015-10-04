@@ -1263,6 +1263,14 @@ commands_handler(commands_t                * Commands,
 			free_cmd_output = GLOBUS_TRUE;
 		break;
 
+	case GLOBUS_GFS_CMD_TRNC:
+		retval = hpss_Truncate(CommandInfo->pathname, CommandInfo->cksm_offset);
+		if (retval != 0)
+		{
+			result = GlobusGFSErrorSystemError("hpss_Truncate", -retval);
+		}
+		break;
+
 	case GLOBUS_GFS_CMD_SITE_DSI:
 	case GLOBUS_GFS_CMD_SITE_SETNETSTACK:
 	case GLOBUS_GFS_CMD_SITE_SETDISKSTACK:

@@ -1,3 +1,6 @@
+Version 1.9: Sun Oct  4 09:05:01 CDT 2015
+	- Added support for SITE TRNC
+
 Version 1.8: Tue Jan 20 09:53:20 CST 2015
 	- Fixed perf markers, the last marker wasn't being sent
 	- Fix for restarts. See patches/perf_restart_markers.README. If you don't
