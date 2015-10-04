@@ -1,5 +1,6 @@
 Version 1.9: Sun Oct  4 09:05:01 CDT 2015
 	- Added support for SITE TRNC
+	- On STOR, always use O_CREAT in support of S3 transfers
 
 Version 1.8: Tue Jan 20 09:53:20 CST 2015
 	- Fixed perf markers, the last marker wasn't being sent

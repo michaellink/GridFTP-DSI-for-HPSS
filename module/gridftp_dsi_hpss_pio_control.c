@@ -182,10 +182,10 @@ pio_control_open_file_for_writing(pio_control_t * PioControl,
 		}
 	}
 
-	/* Determine the open flags. */
-	oflags = O_WRONLY;
+	/* Always use O_CREAT in support of S3 transfers. */
+	oflags = O_WRONLY|O_CREAT;
 	if (Truncate == GLOBUS_TRUE)
-		oflags |= O_CREAT|O_TRUNC;
+		oflags |= O_TRUNC;
 
 	/* Open the HPSS file. */
 	PioControl->FileFD = hpss_Open(Pathname,
